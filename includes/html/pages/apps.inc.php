@@ -27,6 +27,12 @@ $graphs['memcached'] = array(
     'data',
     'items',
 );
+$graphs['kea'] = array(
+    'reclamed4',
+    'dhcp4',
+    'dhcp6',
+    'reclamed6',
+);
 $graphs['nginx']     = array(
     'connections',
     'req',

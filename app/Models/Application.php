@@ -49,6 +49,7 @@ class Application extends DeviceRelatedModel
         'fbsd-nfs-server' => 'FreeBSD NFS Server',
         'freeradius' => 'FreeRADIUS',
         'gpsd' => 'GPSD',
+        'kea' => 'Kea DHCP Server',
         'mysql' => 'MySQL',
         'nfs-stats' => 'NFS Stats',
         'nfs-v3-stats' => 'NFS v3 Stats',
