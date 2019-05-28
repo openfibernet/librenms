@@ -23,9 +23,9 @@ list($receive4_drop, $reclaimed4_declined_addresses, $reclaimed4_leases, $releas
 /* Reclaiming DHCPv4 statistics */
 $rrd_name = array('app', $name, 'reclamed4', $app_id);
 $rrd_def = RrdDefinition::make()
-    ->addDataset('reclaimed4_declined_addresses', 'GAUGE', 0)
-    ->addDataset('reclaimed4_leases', 'GAUGE', 0)
-    ->addDataset('declined4_addresses', 'GAUGE', 0);
+    ->addDataset('reclaimed4_declined_addresses', 'DERIVE', 0)
+    ->addDataset('reclaimed4_leases', 'DERIVE', 0)
+    ->addDataset('declined4_addresses', 'DERIVE', 0);
 
 $fields = array(
     'reclaimed4_declined_addresses'     => $reclaimed4_declined_addresses,
@@ -41,14 +41,14 @@ data_update($device, 'app', $tags, $fields);
 /* DHCPv4 statistics */
 $rrd_name = array('app', $name, 'dhcp4', $app_id);
 $rrd_def = RrdDefinition::make()
-    ->addDataset('receive4_drop', 'GAUGE', 0)
-    ->addDataset('release4_rcvd', 'GAUGE', 0)
-    ->addDataset('nak4_sent', 'GAUGE', 0)
-    ->addDataset('offer4_sent', 'GAUGE', 0)
-    ->addDataset('inform4_rcvd', 'GAUGE', 0)
-    ->addDataset('request4_rcvd', 'GAUGE', 0)
-    ->addDataset('discover4_rcvd', 'GAUGE', 0)
-    ->addDataset('ack4_sent', 'GAUGE', 0);
+    ->addDataset('receive4_drop', 'DERIVE', 0)
+    ->addDataset('release4_rcvd', 'DERIVE', 0)
+    ->addDataset('nak4_sent', 'DERIVE', 0)
+    ->addDataset('offer4_sent', 'DERIVE', 0)
+    ->addDataset('inform4_rcvd', 'DERIVE', 0)
+    ->addDataset('request4_rcvd', 'DERIVE', 0)
+    ->addDataset('discover4_rcvd', 'DERIVE', 0)
+    ->addDataset('ack4_sent', 'DERIVE', 0);
 
 $fields = array(
     'receive4_drop'  => intval(trim($receive4_drop, '"')),
@@ -69,16 +69,16 @@ data_update($device, 'app', $tags, $fields);
 /* DHCPv6 statistics */
 $rrd_name = array('app', $name, 'dhcp6', $app_id);
 $rrd_def = RrdDefinition::make()
-    ->addDataset('rebind6_rcvd', 'GAUGE', 0)
-    ->addDataset('reply6_sent', 'GAUGE', 0)
-    ->addDataset('solicit6_rcvd', 'GAUGE', 0)
-    ->addDataset('renew6_rcvd', 'GAUGE', 0)
-    ->addDataset('confirm6_rcvd', 'GAUGE', 0)
-    ->addDataset('infrequest6_rcvd', 'GAUGE', 0)
-    ->addDataset('advertise6_sent', 'GAUGE', 0)
-    ->addDataset('receive6_drop', 'GAUGE', 0)
-    ->addDataset('request6_rcvd', 'GAUGE', 0)
-    ->addDataset('release6_rcvd', 'GAUGE', 0);
+    ->addDataset('rebind6_rcvd', 'DERIVE', 0)
+    ->addDataset('reply6_sent', 'DERIVE', 0)
+    ->addDataset('solicit6_rcvd', 'DERIVE', 0)
+    ->addDataset('renew6_rcvd', 'DERIVE', 0)
+    ->addDataset('confirm6_rcvd', 'DERIVE', 0)
+    ->addDataset('infrequest6_rcvd', 'DERIVE', 0)
+    ->addDataset('advertise6_sent', 'DERIVE', 0)
+    ->addDataset('receive6_drop', 'DERIVE', 0)
+    ->addDataset('request6_rcvd', 'DERIVE', 0)
+    ->addDataset('release6_rcvd', 'DERIVE', 0);
 
 $fields = array(
     'rebind6_rcvd'                      => $rebind6_rcvd,
@@ -101,9 +101,9 @@ data_update($device, 'app', $tags, $fields);
 /* Reclaiming DHCPv6 statistics */
 $rrd_name = array('app', $name, 'reclamed6', $app_id);
 $rrd_def = RrdDefinition::make()
-    ->addDataset('declined6_addresses', 'GAUGE', 0)
-    ->addDataset('reclaimed6_leases', 'GAUGE', 0)
-    ->addDataset('reclaimed6_declined_addresses', 'GAUGE', 0);
+    ->addDataset('declined6_addresses', 'DERIVE', 0)
+    ->addDataset('reclaimed6_leases', 'DERIVE', 0)
+    ->addDataset('reclaimed6_declined_addresses', 'DERIVE', 0);
 
 $fields = array(
     'reclaimed6_leases'                 => $reclaimed6_leases,
